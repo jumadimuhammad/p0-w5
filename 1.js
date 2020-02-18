@@ -24,11 +24,11 @@ function getTotal(arrNumber) {
     var count = 0
 
     if (arrNumber == 0) {
-        return " "
+        return ""
     }
 
-    for (var k = 0; k < arrNumber; k++) {
-        if (arrNumber[arrNumber.length - 1] === arrNumber[k]) {
+    for (var k = 0; k < arrNumber.length; k++) {
+        if (max === arrNumber[k]) {
             count++
         }
     }
