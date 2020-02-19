@@ -16,7 +16,7 @@ function changeVocals(str) {
       res += str[i]
     }
   }
-
+  return res
 }
 
 function reverseWord(str) {
@@ -56,11 +56,17 @@ function removeSpaces(str) {
     }
   }
 
-  return res.join('')
+  var c = res.join('')
+
+  return c
 }
 
 function passwordGenerator(name) {
   //code di sini
+
+  if (name.length < 5) {
+    return 'Minimal karakter yang diinputkan adalah 5 karakter'
+  }
 
   var up = changeVocals(name)
   var re = reverseWord(up)
@@ -68,6 +74,7 @@ function passwordGenerator(name) {
   var mo = removeSpaces(lo)
 
   return mo
+
 }
 
 console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'

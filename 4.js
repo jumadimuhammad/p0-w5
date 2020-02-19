@@ -1,24 +1,28 @@
-// function totalDigitRekursif(angka) {
-//     // you can only write your code here!
-//   }
+function totalDigitRekursif(angka) {
+  // you can only write your code here!
 
-//   // TEST CASES
-//   console.log(totalDigitRekursif(512)); // 8
-//   console.log(totalDigitRekursif(1542)); // 12
-//   console.log(totalDigitRekursif(5)); // 5
-//   console.log(totalDigitRekursif(21)); // 3
-//   console.log(totalDigitRekursif(11111)); // 5
+  var str = angka.toString()
 
+  if (str.length == 1) {
+    return Number(angka)
+  }
+  // hasil = 0
+  // for (var i = 0; i < str.length; i++) {
+  //    hasil += Number(str[i])
+  // }
 
-var str = 'Sergei Dragunov'
-var a = str.split('')
-var res = ''
+  var pertama = Number(str[0])
+  str = str.slice(1)
 
-for (var i = 0; i < a.length; i++) {
-	if (a[i] === ' ') {
-		a.splice(i, 1)
-		res = a
-	}
+  console.log('angka pertama ' + pertama + ' + ' + totalDigitRekursif(Number(str)))
+
+  return pertama + totalDigitRekursif(Number(str))
+
 }
 
-console.log(res.join(''))
+// TEST CASES
+console.log(totalDigitRekursif(512)); // 8
+console.log(totalDigitRekursif(1542)); // 12
+console.log(totalDigitRekursif(5)); // 5
+console.log(totalDigitRekursif(21)); // 3
+console.log(totalDigitRekursif(11111)); // 5
